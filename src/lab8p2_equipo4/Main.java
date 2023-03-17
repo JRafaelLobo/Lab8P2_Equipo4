@@ -48,7 +48,6 @@ public class Main extends javax.swing.JFrame {
         tf_universomodificarnombre = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jcb_universoamodificar = new javax.swing.JComboBox<>();
         jf_udelete = new javax.swing.JFrame();
         jPanel7 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -97,6 +96,9 @@ public class Main extends javax.swing.JFrame {
         js_serviviocrearpoder = new javax.swing.JSpinner();
         jButton13 = new javax.swing.JButton();
         js_servivocrearanios = new javax.swing.JSpinner();
+        jcb_universoamodificar = new javax.swing.JComboBox<>();
+        jFrame2 = new javax.swing.JFrame();
+        jLabel20 = new javax.swing.JLabel();
         B_MainAgregar = new javax.swing.JButton();
         B_MainModificar = new javax.swing.JButton();
         B_MainEliminar = new javax.swing.JButton();
@@ -207,10 +209,6 @@ public class Main extends javax.swing.JFrame {
         jPanel6.add(jLabel3);
         jLabel3.setBounds(-32674, -32714, 37, 16);
 
-        jcb_universoamodificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel6.add(jcb_universoamodificar);
-        jcb_universoamodificar.setBounds(-32582, -32717, 72, 22);
-
         jframe_umod.getContentPane().add(jPanel6);
         jPanel6.setBounds(0, 0, 0, 0);
 
@@ -263,6 +261,11 @@ public class Main extends javax.swing.JFrame {
         jLabel16.setBounds(80, 330, 60, 16);
 
         jcb_servivomodificaruniverso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_servivomodificaruniverso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jcb_servivomodificaruniversoMousePressed(evt);
+            }
+        });
         jPanel10.add(jcb_servivomodificaruniverso);
         jcb_servivomodificaruniverso.setBounds(180, 320, 460, 22);
 
@@ -416,6 +419,25 @@ public class Main extends javax.swing.JFrame {
         jf_servivocrear.getContentPane().add(jPanel9);
         jPanel9.setBounds(-32768, -32768, 100, 100);
 
+        jcb_universoamodificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
+        jFrame2.getContentPane().setLayout(jFrame2Layout);
+        jFrame2Layout.setHorizontalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(742, Short.MAX_VALUE))
+        );
+        jFrame2Layout.setVerticalGroup(
+            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame2Layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel20)
+                .addContainerGap(555, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
@@ -511,12 +533,12 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         ArrayList<Universo> remove = au.getListaUniverso();
-        ArrayList add = new ArrayList();
+        ArrayList<Universo> add = new ArrayList();
         db.conectar();
 
         try {
             for (Universo u : remove) {
-                if (u.getNombre().equals(jcb_borraru.getSelectedItem().toString())) {
+                if (!(u.getNombre().equals(jcb_borraru.getSelectedItem().toString()))) {
                     add.add(u);
                 }
             }
@@ -593,7 +615,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
- boolean entra = true;
+        boolean entra = true;
         String codigo = tf_servivomodificarcodigo.getText();
         String nombre = tf_servivomodificarnombre.getText();
         int poder = Integer.parseInt(js_serviviomodificarpoder.getValue().toString());
@@ -623,14 +645,14 @@ public class Main extends javax.swing.JFrame {
         if (entra) {
             db.conectar();
             try {
-                db.query.execute("update alumnos set codigo="+codigo+", set Nombre="+nombre+", set Poder="+poder+",set Anios="+anios+",set Universo="+uni+", set Raza="+raza+ " where Nombre="+jcb_servivomodificarseres.getSelectedItem().toString());
+                db.query.execute("update alumnos set codigo=" + codigo + ", set Nombre=" + nombre + ", set Poder=" + poder + ",set Anios=" + anios + ",set Universo=" + uni + ", set Raza=" + raza + " where Nombre=" + jcb_servivomodificarseres.getSelectedItem().toString());
                 db.commit();
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
             db.desconectar();
             for (Universo u : au.getListaUniverso()) {
-                for (Servivo s: u.getSeres()) {
+                for (Servivo s : u.getSeres()) {
                     if (s.getNombre().equals(jcb_servivomodificarseres.getSelectedItem().toString())) {
                         s.setNombre(nombre);
                         s.setCodigo(codigo);
@@ -640,7 +662,7 @@ public class Main extends javax.swing.JFrame {
                         s.setUniverso(uni);
                     }
                 }
-                
+
             }
             db.desconectar();
             jf_modificar.setVisible(false);
@@ -650,28 +672,48 @@ public class Main extends javax.swing.JFrame {
         }
 
 
-                          
-
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jb_servivoeliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_servivoeliminarMouseClicked
-      String nombre = jcb_servivoeliminar.getSelectedItem().toString();
-       ArrayList<Universo> remove = au.getListaUniverso();
-        ArrayList<Universo> add = new ArrayList();
+        String nombre = jcb_servivoeliminar.getSelectedItem().toString();
+        ArrayList<Universo> remove = au.getListaUniverso();
+        ArrayList<Servivo> add = new ArrayList();
         db.conectar();
 
         try {
-            for (Universo : remove) {
-                
+            for (Universo u : remove) {
+                for (Servivo s : u.getSeres()) {
+                    if (!(s.getNombre().equals(nombre))) {
+                        add.add(s);
+                    } else {
+                        int cant = u.getCantidad();
+                        cant -= 1;
+                        u.setCantidad(cant);
+                        db.conectar();
+                        try {
+                            db.query.execute("update Universo set Cantidad='" + cant + "' where cuenta=" + u.getNombre());
+                            db.commit();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                        db.desconectar();
+                    }
+                }
+                u.setSeres(add);
             }
-            au.setListaPersonas(add);
+
             db.query.execute("delete from Servivo where Nombre=" + nombre);
             db.commit();
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         db.desconectar();
     }//GEN-LAST:event_jb_servivoeliminarMouseClicked
+
+    private void jcb_servivomodificaruniversoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcb_servivomodificaruniversoMousePressed
+      
+    }//GEN-LAST:event_jcb_servivomodificaruniversoMousePressed
 
     /**
      * @param args the command line arguments
@@ -728,6 +770,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -740,6 +783,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
