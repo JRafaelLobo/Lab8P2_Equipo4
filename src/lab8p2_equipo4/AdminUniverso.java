@@ -37,6 +37,11 @@ public class AdminUniverso {
         ListaUniverso.add(a);
     }
 
+    public ArrayList<Universo> getListaUniverso() {
+        return ListaUniverso;
+    }
+    
+
     public void cargarArchivo() {
         try {
             ListaUniverso = new ArrayList();

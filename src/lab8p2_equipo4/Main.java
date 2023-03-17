@@ -64,6 +64,21 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
+        jf_servivocrear = new javax.swing.JFrame();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jcb_servivocrearuniverso = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        tf_servivocrearraza = new javax.swing.JTextField();
+        tf_servivocrearcodigo = new javax.swing.JTextField();
+        tf_servivocrearnombre = new javax.swing.JTextField();
+        js_serviviocrearpoder = new javax.swing.JSpinner();
+        jButton13 = new javax.swing.JButton();
+        js_servivocrearanios = new javax.swing.JSpinner();
         B_MainAgregar = new javax.swing.JButton();
         B_MainModificar = new javax.swing.JButton();
         B_MainEliminar = new javax.swing.JButton();
@@ -390,6 +405,70 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel9.setLayout(null);
+
+        jLabel6.setText("Codigo:");
+        jPanel9.add(jLabel6);
+        jLabel6.setBounds(80, 80, 90, 16);
+
+        jLabel7.setText("Nombre:");
+        jPanel9.add(jLabel7);
+        jLabel7.setBounds(80, 140, 80, 16);
+
+        jLabel8.setText("Poder:");
+        jPanel9.add(jLabel8);
+        jLabel8.setBounds(80, 200, 34, 16);
+
+        jLabel9.setText("Años:");
+        jPanel9.add(jLabel9);
+        jLabel9.setBounds(80, 270, 30, 16);
+
+        jLabel10.setText("Universo:");
+        jPanel9.add(jLabel10);
+        jLabel10.setBounds(80, 330, 60, 16);
+
+        jcb_servivocrearuniverso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel9.add(jcb_servivocrearuniverso);
+        jcb_servivocrearuniverso.setBounds(180, 320, 460, 22);
+
+        jLabel11.setText("Raza:");
+        jPanel9.add(jLabel11);
+        jLabel11.setBounds(80, 390, 50, 16);
+        jPanel9.add(tf_servivocrearraza);
+        tf_servivocrearraza.setBounds(170, 380, 470, 22);
+        jPanel9.add(tf_servivocrearcodigo);
+        tf_servivocrearcodigo.setBounds(170, 80, 470, 22);
+        jPanel9.add(tf_servivocrearnombre);
+        tf_servivocrearnombre.setBounds(170, 140, 470, 22);
+
+        js_serviviocrearpoder.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+        jPanel9.add(js_serviviocrearpoder);
+        js_serviviocrearpoder.setBounds(170, 200, 460, 22);
+
+        jButton13.setText("Agegar");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+        jPanel9.add(jButton13);
+        jButton13.setBounds(740, 530, 72, 23);
+
+        js_servivocrearanios.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel9.add(js_servivocrearanios);
+        js_servivocrearanios.setBounds(170, 260, 450, 22);
+
+        javax.swing.GroupLayout jf_servivocrearLayout = new javax.swing.GroupLayout(jf_servivocrear.getContentPane());
+        jf_servivocrear.getContentPane().setLayout(jf_servivocrearLayout);
+        jf_servivocrearLayout.setHorizontalGroup(
+            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+        );
+        jf_servivocrearLayout.setVerticalGroup(
+            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
@@ -422,7 +501,7 @@ public class Main extends javax.swing.JFrame {
         boolean entra = true;
         String n;
         n = tf_universocrearnombre.getText();
-        for (Universo u : universos) {
+        for (Universo u : au.getListaUniverso()) {
             if (u.getNombre().equals(n)) {
                 entra = false;
             }
@@ -434,6 +513,8 @@ public class Main extends javax.swing.JFrame {
                         + " VALUES ('" + n + "', '" + 0 + "')");
                 db.commit();
                 db.desconectar();
+                Universo u = new Universo(n, 0);
+                au.getListaUniverso().add(u);
             } catch (SQLException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -456,7 +537,7 @@ public class Main extends javax.swing.JFrame {
         boolean entra = true;
         String n;
         n = tf_universomodificarnombre.getText();
-        for (Universo u : universos) {
+        for (Universo u : au.getListaUniverso()) {
             if (u.getNombre().equals(n)) {
                 entra = false;
             }
@@ -464,8 +545,13 @@ public class Main extends javax.swing.JFrame {
         if (entra) {
             db.conectar();
             try {
-                db.query.execute("update Universo set Nombre='"+n+"' where Nombre="+jcb_universoamodificar.getSelectedItem().toString());
+                db.query.execute("update Universo set Nombre='" + n + "' where Nombre=" + jcb_universoamodificar.getSelectedItem().toString());
                 db.commit();
+                for (Universo u : au.getListaUniverso()) {
+                    if (u.getNombre().equals(jcb_universoamodificar.getSelectedItem().toString())) {
+                        u.setNombre(n);
+                    }
+                }
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -477,15 +563,69 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        ArrayList<Universo> remove = au.getListaUniverso();
+        ArrayList add = new ArrayList();
         db.conectar();
+
         try {
-            db.query.execute("delete from alumnos where Nombre="+jcb_borraru.getSelectedItem().toString());
+            for (Universo u : remove) {
+                if (u.getNombre().equals(jcb_borraru.getSelectedItem().toString())) {
+                    add.add(u);
+                }
+            }
+            au.setListaPersonas(add);
+            db.query.execute("delete from alumnos where Nombre=" + jcb_borraru.getSelectedItem().toString());
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
         db.desconectar();
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        boolean entra = true;
+        db.conectar();
+        try {
+            /*
+            private String codigo;
+    private String nombre;
+    private int poder;
+    private int anios;
+    private String universo;
+    private String raza; 
+             */
+            String codigo = tf_servivocrearcodigo.getText();
+            String nombre = tf_servivocrearnombre.getText();
+            int poder = Integer.parseInt(js_serviviocrearpoder.getValue().toString());
+            int anios = Integer.parseInt(js_servivocrearanios.getValue().toString());
+            String uni = jcb_servivocrearuniverso.getSelectedItem().toString();
+            String raza = tf_servivocrearraza.getText();
+            db.query.execute("INSERT INTO Servivo"
+                    + " VALUES ('" + codigo + "', '" + nombre + "', '" + poder + "', '" + anios + "', '" + uni + "', '" + raza + "')");
+            db.commit();
+            for (Universo u : au.getListaUniverso()) {
+                if (u.getNombre().equals(uni)) {
+                    Servivo sv = new Servivo(codigo, nombre, poder, anios, uni, raza);
+                    u.getSeres().add(sv);
+                    int cant = u.getCantidad();
+                    cant += 1;
+                    u.setCantidad(cant);
+                    db.conectar();
+                    try {
+                        db.query.execute("update Universo set Cantidad='"+cant+"' where cuenta="+u.getNombre());
+                        db.commit();
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                    db.desconectar();
+                }
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jButton13MouseClicked
 
     /**
      * @param args the command line arguments
@@ -530,6 +670,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -541,10 +682,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -553,9 +700,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> jcb_borraru;
+    private javax.swing.JComboBox<String> jcb_servivocrearuniverso;
     private javax.swing.JComboBox<String> jcb_universoamodificar;
     private javax.swing.JFrame jf_agregar;
     private javax.swing.JFrame jf_cargar;
@@ -564,12 +713,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame jf_modificar;
     private javax.swing.JFrame jf_sercrear;
     private javax.swing.JFrame jf_sermodificar;
+    private javax.swing.JFrame jf_servivocrear;
     private javax.swing.JFrame jf_ucreate;
     private javax.swing.JFrame jf_udelete;
     private javax.swing.JFrame jframe_umod;
+    private javax.swing.JSpinner js_serviviocrearpoder;
+    private javax.swing.JSpinner js_servivocrearanios;
+    private javax.swing.JTextField tf_servivocrearcodigo;
+    private javax.swing.JTextField tf_servivocrearnombre;
+    private javax.swing.JTextField tf_servivocrearraza;
     private javax.swing.JTextField tf_universocrearnombre;
     private javax.swing.JTextField tf_universomodificarnombre;
     // End of variables declaration//GEN-END:variables
-ArrayList<Universo> universos = new ArrayList();
+
     Dba db = new Dba("./Tabladeuniverso");
+    AdminUniverso au = new AdminUniverso("./universosdelprograma.cbm");
 }

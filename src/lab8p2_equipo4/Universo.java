@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 public class Universo {
     private String nombre;
-    private String cantidad;
+    private int cantidad;
     private ArrayList <Servivo> seres=new ArrayList();
 
-    public Universo(String nombre, String cantidad) {
+    public Universo(String nombre, int cantidad) {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
@@ -34,13 +34,14 @@ public class Universo {
         this.nombre = nombre;
     }
 
-    public String getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    
 
     public ArrayList<Servivo> getSeres() {
         return seres;
