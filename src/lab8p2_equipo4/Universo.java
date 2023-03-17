@@ -19,6 +19,11 @@ public class Universo {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
+
+    public Universo(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
 
     public Universo() {

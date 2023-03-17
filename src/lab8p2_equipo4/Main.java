@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.sql.ResultSet;
 
 public class Main extends javax.swing.JFrame {
 
@@ -474,11 +475,23 @@ public class Main extends javax.swing.JFrame {
         boolean entra = true;
         String n;
         n = tf_universocrearnombre.getText();
-        for (Universo u : au.getListaUniverso()) {
+        db.conectar();
+        try {
+            db.query.execute("select Nombre from Universo");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                Universo uni=new Universo(rs.getString(2));
+                universoslista.add(uni);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        for (Universo u : universoslista) {
             if (u.getNombre().equals(n)) {
                 entra = false;
             }
         }
+        db.desconectar();
         if (entra) {
             try {
                 db.conectar();
@@ -486,8 +499,6 @@ public class Main extends javax.swing.JFrame {
                         + " VALUES ('" + n + "', '" + 0 + "')");
                 db.commit();
                 db.desconectar();
-                Universo u = new Universo(n, 0);
-                au.getListaUniverso().add(u);
             } catch (SQLException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -510,7 +521,17 @@ public class Main extends javax.swing.JFrame {
         boolean entra = true;
         String n;
         n = tf_universomodificarnombre.getText();
-        for (Universo u : au.getListaUniverso()) {
+        try {
+            db.query.execute("select Nombre from Universo");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                Universo uni=new Universo(rs.getString(2));
+                universoslista.add(uni);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        for (Universo u : universoslista) {
             if (u.getNombre().equals(n)) {
                 entra = false;
             }
@@ -520,11 +541,7 @@ public class Main extends javax.swing.JFrame {
             try {
                 db.query.execute("update Universo set Nombre='" + n + "' where Nombre=" + jcb_universoamodificar.getSelectedItem().toString());
                 db.commit();
-                for (Universo u : au.getListaUniverso()) {
-                    if (u.getNombre().equals(jcb_universoamodificar.getSelectedItem().toString())) {
-                        u.setNombre(n);
-                    }
-                }
+                
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
@@ -536,7 +553,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        ArrayList<Universo> remove = au.getListaUniverso();
+        ArrayList<Universo> remove = universoslista;
         ArrayList<Universo> add = new ArrayList();
         db.conectar();
 
@@ -546,7 +563,7 @@ public class Main extends javax.swing.JFrame {
                     add.add(u);
                 }
             }
-            au.setListaPersonas(add);
+            universoslista=add;
             db.query.execute("delete from alumnos where Nombre=" + jcb_borraru.getSelectedItem().toString());
             db.commit();
         } catch (SQLException ex) {
@@ -566,13 +583,23 @@ public class Main extends javax.swing.JFrame {
         if (au.getListaUniverso().size() == 0) {
             entra = false;
         }
-        for (Universo u : au.getListaUniverso()) {
-            for (Servivo s : u.getSeres()) {
+                try {
+            db.query.execute("select * from Servivo");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                Servivo ser=new Servivo(rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getString(6), rs.getString(7));
+                servivolista.add(ser);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+            for (Servivo s :servivolista) {
                 if (s.getCodigo().equals(codigo) || s.getNombre().equals(nombre)) {
                     entra = false;
                 }
             }
-        }
+        
         db.conectar();
 
         /*
@@ -588,10 +615,16 @@ public class Main extends javax.swing.JFrame {
                 db.query.execute("INSERT INTO Servivo"
                         + " VALUES ('" + codigo + "', '" + nombre + "', '" + poder + "', '" + anios + "', '" + uni + "', '" + raza + "')");
                 db.commit();
-                for (Universo u : au.getListaUniverso()) {
-                    if (u.getNombre().equals(uni)) {
-                        Servivo sv = new Servivo(codigo, nombre, poder, anios, uni, raza);
-                        u.getSeres().add(sv);
+                   try {
+            db.query.execute("select Cantidad from Universo where Nombre="+jcb_servivocrearuniverso.getSelectedItem().toString());
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                int cant=rs
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
                         int cant = u.getCantidad();
                         cant += 1;
                         u.setCantidad(cant);
@@ -603,8 +636,8 @@ public class Main extends javax.swing.JFrame {
                             ex.printStackTrace();
                         }
                         db.desconectar();
-                    }
-                }
+                    
+                
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -839,6 +872,8 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     Dba db = new Dba("./Tabladeuniverso");
+    ArrayList <Universo> universoslista=new ArrayList();
+    ArrayList <Servivo> servivolista=new ArrayList();
     AdminSerVivos au = new AdminSerVivos("./universosdelprograma.cbm");
 
     class Fondo extends JPanel {
