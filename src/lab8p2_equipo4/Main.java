@@ -1,10 +1,14 @@
 package lab8p2_equipo4;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class Main extends javax.swing.JFrame {
 
@@ -692,4 +696,22 @@ public class Main extends javax.swing.JFrame {
 
     Dba db = new Dba("./Tabladeuniverso");
     AdminUniverso au = new AdminUniverso("./universosdelprograma.cbm");
+
+    //clase dentro de otra clase, nunca pense que lo iba a utilizar pero ya pos
+    class Fondo extends JPanel {
+
+        public Fondo(String direccion) {
+            this.direccion = direccion;
+        }
+
+        private String direccion;
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(direccion).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }
