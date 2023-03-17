@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class AdminSerVivos {
-
     private ArrayList<Servivo> SeresVivos = new ArrayList();
     private File archivo = null;
 
