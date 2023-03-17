@@ -55,6 +55,20 @@ public class Main extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jf_sercrear = new javax.swing.JFrame();
+        lb_CrearSer = new javax.swing.JLabel();
+        lb_nombreCrearSer = new javax.swing.JLabel();
+        tb_anoSer = new javax.swing.JTextField();
+        tb_anoSer1 = new javax.swing.JTextField();
+        lb_idCrearSer = new javax.swing.JLabel();
+        lb_PoderCrearSer = new javax.swing.JLabel();
+        lb_anosCrearSer = new javax.swing.JLabel();
+        lb_RazaCrearPersonaje = new javax.swing.JLabel();
+        lb_UniversoCrearSer = new javax.swing.JLabel();
+        JS_anosCrearSer = new javax.swing.JSpinner();
+        B_CrearSeres = new javax.swing.JButton();
+        JCB_UniversoPecedenciaCrearSer = new javax.swing.JComboBox<>();
+        JCB_RazaCrearSer = new javax.swing.JComboBox<>();
+        JS_PoderCrearSer = new javax.swing.JSpinner();
         jf_sermodificar = new javax.swing.JFrame();
         jf_eliminarser = new javax.swing.JFrame();
         jFrame1 = new javax.swing.JFrame();
@@ -89,7 +103,7 @@ public class Main extends javax.swing.JFrame {
             jf_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf_agregarLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 91, Short.MAX_VALUE))
         );
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -308,15 +322,89 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        lb_CrearSer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lb_CrearSer.setText("Crear Ser");
+
+        lb_nombreCrearSer.setText("Nombre");
+
+        lb_idCrearSer.setText("ID");
+
+        lb_PoderCrearSer.setText("Poder");
+
+        lb_anosCrearSer.setText("Anos");
+
+        lb_RazaCrearPersonaje.setText("Raza");
+
+        lb_UniversoCrearSer.setText("Universo de Procedencia");
+
+        B_CrearSeres.setLabel("Crear Ser");
+
+        JCB_RazaCrearSer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto" }));
+
+        JS_PoderCrearSer.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
         javax.swing.GroupLayout jf_sercrearLayout = new javax.swing.GroupLayout(jf_sercrear.getContentPane());
         jf_sercrear.getContentPane().setLayout(jf_sercrearLayout);
         jf_sercrearLayout.setHorizontalGroup(
             jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jf_sercrearLayout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addComponent(lb_CrearSer)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jf_sercrearLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JS_PoderCrearSer)
+                    .addComponent(JCB_UniversoPecedenciaCrearSer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lb_nombreCrearSer)
+                    .addComponent(tb_anoSer)
+                    .addComponent(lb_idCrearSer)
+                    .addComponent(tb_anoSer1, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                    .addComponent(lb_PoderCrearSer)
+                    .addComponent(lb_anosCrearSer)
+                    .addComponent(lb_RazaCrearPersonaje)
+                    .addComponent(lb_UniversoCrearSer)
+                    .addComponent(JS_anosCrearSer)
+                    .addComponent(JCB_RazaCrearSer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(B_CrearSeres)
+                .addGap(92, 92, 92))
         );
         jf_sercrearLayout.setVerticalGroup(
             jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jf_sercrearLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(lb_CrearSer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lb_nombreCrearSer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tb_anoSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lb_idCrearSer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tb_anoSer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lb_PoderCrearSer)
+                .addGroup(jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jf_sercrearLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JS_PoderCrearSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(lb_anosCrearSer))
+                    .addGroup(jf_sercrearLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(B_CrearSeres)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JS_anosCrearSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_UniversoCrearSer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JCB_UniversoPecedenciaCrearSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_RazaCrearPersonaje)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JCB_RazaCrearSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jf_sermodificarLayout = new javax.swing.GroupLayout(jf_sermodificar.getContentPane());
@@ -390,7 +478,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(B_MainAgregar);
-        B_MainAgregar.setBounds(46, 204, 73, 23);
+        B_MainAgregar.setBounds(46, 204, 72, 23);
 
         B_MainModificar.setText("Modificar");
         getContentPane().add(B_MainModificar);
@@ -478,10 +566,15 @@ public class Main extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_CrearSeres;
     private javax.swing.JButton B_MainAgregar;
     private javax.swing.JButton B_MainEliminar;
     private javax.swing.JButton B_MainGuardar;
     private javax.swing.JButton B_MainModificar;
+    private javax.swing.JComboBox<String> JCB_RazaCrearSer;
+    private javax.swing.JComboBox<String> JCB_UniversoPecedenciaCrearSer;
+    private javax.swing.JSpinner JS_PoderCrearSer;
+    private javax.swing.JSpinner JS_anosCrearSer;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -524,6 +617,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame jf_ucreate;
     private javax.swing.JFrame jf_udelete;
     private javax.swing.JFrame jframe_umod;
+    private javax.swing.JLabel lb_CrearSer;
+    private javax.swing.JLabel lb_PoderCrearSer;
+    private javax.swing.JLabel lb_RazaCrearPersonaje;
+    private javax.swing.JLabel lb_UniversoCrearSer;
+    private javax.swing.JLabel lb_anosCrearSer;
+    private javax.swing.JLabel lb_idCrearSer;
+    private javax.swing.JLabel lb_nombreCrearSer;
+    private javax.swing.JTextField tb_anoSer;
+    private javax.swing.JTextField tb_anoSer1;
     private javax.swing.JTextField tf_universocrearnombre;
     // End of variables declaration//GEN-END:variables
 ArrayList <Universo> universos=new ArrayList();
