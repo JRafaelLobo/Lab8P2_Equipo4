@@ -4,6 +4,8 @@
  */
 package lab8p2_equipo4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Gabriela Montes
@@ -11,6 +13,7 @@ package lab8p2_equipo4;
 public class Universo {
     private String nombre;
     private String cantidad;
+    private ArrayList <Servivo> seres=new ArrayList();
 
     public Universo(String nombre, String cantidad) {
         this.nombre = nombre;
@@ -38,6 +41,15 @@ public class Universo {
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
+
+    public ArrayList<Servivo> getSeres() {
+        return seres;
+    }
+
+    public void setSeres(ArrayList<Servivo> seres) {
+        this.seres = seres;
+    }
+    
 
     @Override
     public String toString() {
