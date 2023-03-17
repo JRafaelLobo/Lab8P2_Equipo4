@@ -99,99 +99,75 @@ public class Main extends javax.swing.JFrame {
         B_MainEliminar = new javax.swing.JButton();
         B_MainGuardar = new javax.swing.JButton();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jf_agregar.getContentPane().setLayout(null);
+
+        jPanel1.setLayout(null);
 
         jButton5.setText("Universo");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 310, -1));
+        jPanel1.add(jButton5);
+        jButton5.setBounds(80, 90, 310, 23);
 
         jButton6.setText("Ser vivo");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 310, -1));
+        jPanel1.add(jButton6);
+        jButton6.setBounds(80, 190, 310, 23);
 
-        javax.swing.GroupLayout jf_agregarLayout = new javax.swing.GroupLayout(jf_agregar.getContentPane());
-        jf_agregar.getContentPane().setLayout(jf_agregarLayout);
-        jf_agregarLayout.setHorizontalGroup(
-            jf_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_agregarLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jf_agregarLayout.setVerticalGroup(
-            jf_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_agregarLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jf_agregar.getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 614, 318);
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jf_modificar.getContentPane().setLayout(null);
+
+        jPanel2.setLayout(null);
 
         jButton7.setText("Universo");
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 310, -1));
+        jPanel2.add(jButton7);
+        jButton7.setBounds(0, 0, 0, 0);
 
         jButton8.setText("Ser vivo");
-        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 310, -1));
+        jPanel2.add(jButton8);
+        jButton8.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jf_modificarLayout = new javax.swing.GroupLayout(jf_modificar.getContentPane());
-        jf_modificar.getContentPane().setLayout(jf_modificarLayout);
-        jf_modificarLayout.setHorizontalGroup(
-            jf_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_modificarLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jf_modificarLayout.setVerticalGroup(
-            jf_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_modificarLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jf_modificar.getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 0, 0);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jf_eliminar.getContentPane().setLayout(null);
+
+        jPanel3.setLayout(null);
 
         jButton9.setText("Universo");
-        jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 310, -1));
+        jPanel3.add(jButton9);
+        jButton9.setBounds(0, 0, 0, 0);
 
         jButton10.setText("Ser vivo");
-        jPanel3.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 310, -1));
+        jPanel3.add(jButton10);
+        jButton10.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jf_eliminarLayout = new javax.swing.GroupLayout(jf_eliminar.getContentPane());
-        jf_eliminar.getContentPane().setLayout(jf_eliminarLayout);
-        jf_eliminarLayout.setHorizontalGroup(
-            jf_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_eliminarLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jf_eliminarLayout.setVerticalGroup(
-            jf_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_eliminarLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jf_eliminar.getContentPane().add(jPanel3);
+        jPanel3.setBounds(0, 0, 0, 0);
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jf_cargar.getContentPane().setLayout(null);
+
+        jPanel4.setLayout(null);
 
         jButton11.setText("Universo");
-        jPanel4.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 310, -1));
+        jPanel4.add(jButton11);
+        jButton11.setBounds(0, 0, 0, 0);
 
         jButton12.setText("Ser vivo");
-        jPanel4.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 310, -1));
+        jPanel4.add(jButton12);
+        jButton12.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jf_cargarLayout = new javax.swing.GroupLayout(jf_cargar.getContentPane());
-        jf_cargar.getContentPane().setLayout(jf_cargarLayout);
-        jf_cargarLayout.setHorizontalGroup(
-            jf_cargarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_cargarLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jf_cargarLayout.setVerticalGroup(
-            jf_cargarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_cargarLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jf_cargar.getContentPane().add(jPanel4);
+        jPanel4.setBounds(0, 0, 0, 0);
+
+        jf_ucreate.getContentPane().setLayout(null);
+
+        jPanel5.setLayout(null);
 
         jLabel1.setText("Nombre:");
+        jPanel5.add(jLabel1);
+        jLabel1.setBounds(0, 0, 0, 0);
+        jPanel5.add(tf_universocrearnombre);
+        tf_universocrearnombre.setBounds(0, 0, 0, 0);
 
         jButton1.setText("Agregar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -199,46 +175,21 @@ public class Main extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jPanel5.add(jButton1);
+        jButton1.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(tf_universocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(82, 82, 82))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(tf_universocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(16, 16, 16))
-        );
+        jf_ucreate.getContentPane().add(jPanel5);
+        jPanel5.setBounds(-32768, -32768, 100, 100);
 
-        javax.swing.GroupLayout jf_ucreateLayout = new javax.swing.GroupLayout(jf_ucreate.getContentPane());
-        jf_ucreate.getContentPane().setLayout(jf_ucreateLayout);
-        jf_ucreateLayout.setHorizontalGroup(
-            jf_ucreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jf_ucreateLayout.setVerticalGroup(
-            jf_ucreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jframe_umod.getContentPane().setLayout(null);
+
+        jPanel6.setLayout(null);
 
         jLabel2.setText("Nombre:");
+        jPanel6.add(jLabel2);
+        jLabel2.setBounds(0, 0, 0, 0);
+        jPanel6.add(tf_universomodificarnombre);
+        tf_universomodificarnombre.setBounds(0, 0, 0, 0);
 
         jButton2.setText("Agregar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -246,60 +197,27 @@ public class Main extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
+        jPanel6.add(jButton2);
+        jButton2.setBounds(0, 0, 0, 0);
 
         jLabel3.setText("Universos: ");
+        jPanel6.add(jLabel3);
+        jLabel3.setBounds(-32674, -32714, 37, 16);
 
         jcb_universoamodificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel6.add(jcb_universoamodificar);
+        jcb_universoamodificar.setBounds(-32582, -32717, 72, 22);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(82, 82, 82))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcb_universoamodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(tf_universomodificarnombre)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jcb_universoamodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tf_universomodificarnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(16, 16, 16))
-        );
+        jframe_umod.getContentPane().add(jPanel6);
+        jPanel6.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jframe_umodLayout = new javax.swing.GroupLayout(jframe_umod.getContentPane());
-        jframe_umod.getContentPane().setLayout(jframe_umodLayout);
-        jframe_umodLayout.setHorizontalGroup(
-            jframe_umodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jframe_umodLayout.setVerticalGroup(
-            jframe_umodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jf_udelete.getContentPane().setLayout(null);
+
+        jPanel7.setLayout(null);
 
         jLabel4.setText("Nombre:");
+        jPanel7.add(jLabel4);
+        jLabel4.setBounds(0, 0, 0, 0);
 
         jButton3.setText("Agregar");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -307,46 +225,17 @@ public class Main extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
+        jPanel7.add(jButton3);
+        jButton3.setBounds(0, 0, 0, 0);
 
         jcb_borraru.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel7.add(jcb_borraru);
+        jcb_borraru.setBounds(-32575, -32671, 72, 22);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jcb_borraru, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(82, 82, 82))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jcb_borraru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(16, 16, 16))
-        );
+        jf_udelete.getContentPane().add(jPanel7);
+        jPanel7.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jf_udeleteLayout = new javax.swing.GroupLayout(jf_udelete.getContentPane());
-        jf_udelete.getContentPane().setLayout(jf_udeleteLayout);
-        jf_udeleteLayout.setHorizontalGroup(
-            jf_udeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jf_udeleteLayout.setVerticalGroup(
-            jf_udeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jf_sermodificar.getContentPane().setLayout(null);
 
         jPanel10.setLayout(null);
 
@@ -409,39 +298,22 @@ public class Main extends javax.swing.JFrame {
         jPanel10.add(jcb_servivomodificarseres);
         jcb_servivomodificarseres.setBounds(170, 30, 470, 22);
 
-        javax.swing.GroupLayout jf_sermodificarLayout = new javax.swing.GroupLayout(jf_sermodificar.getContentPane());
-        jf_sermodificar.getContentPane().setLayout(jf_sermodificarLayout);
-        jf_sermodificarLayout.setHorizontalGroup(
-            jf_sermodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_sermodificarLayout.createSequentialGroup()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 926, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jf_sermodificarLayout.setVerticalGroup(
-            jf_sermodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jf_sermodificarLayout.createSequentialGroup()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
-        );
+        jf_sermodificar.getContentPane().add(jPanel10);
+        jPanel10.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jf_eliminarserLayout = new javax.swing.GroupLayout(jf_eliminarser.getContentPane());
-        jf_eliminarser.getContentPane().setLayout(jf_eliminarserLayout);
-        jf_eliminarserLayout.setHorizontalGroup(
-            jf_eliminarserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jf_eliminarserLayout.setVerticalGroup(
-            jf_eliminarserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jf_eliminarser.getContentPane().setLayout(null);
 
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jFrame1.getContentPane().setLayout(null);
+
+        jPanel8.setLayout(null);
 
         jLabel5.setText("Universo:");
-        jPanel8.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jPanel8.add(jLabel5);
+        jLabel5.setBounds(0, 0, 0, 0);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel8.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 380, -1));
+        jPanel8.add(jComboBox3);
+        jComboBox3.setBounds(0, 0, 0, 0);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -456,23 +328,17 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel8.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 520, 390));
+        jPanel8.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 0, 0, 0);
 
         jButton4.setText("Listar");
-        jPanel8.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 520, -1, -1));
+        jPanel8.add(jButton4);
+        jButton4.setBounds(0, 0, 0, 0);
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jFrame1.getContentPane().add(jPanel8);
+        jPanel8.setBounds(-32768, -32768, 100, 100);
+
+        jf_servivocrear.getContentPane().setLayout(null);
 
         jPanel9.setLayout(null);
 
@@ -527,16 +393,8 @@ public class Main extends javax.swing.JFrame {
         jPanel9.add(js_servivocrearanios);
         js_servivocrearanios.setBounds(170, 260, 450, 22);
 
-        javax.swing.GroupLayout jf_servivocrearLayout = new javax.swing.GroupLayout(jf_servivocrear.getContentPane());
-        jf_servivocrear.getContentPane().setLayout(jf_servivocrearLayout);
-        jf_servivocrearLayout.setHorizontalGroup(
-            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
-        );
-        jf_servivocrearLayout.setVerticalGroup(
-            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
-        );
+        jf_servivocrear.getContentPane().add(jPanel9);
+        jPanel9.setBounds(-32768, -32768, 100, 100);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -653,51 +511,69 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         boolean entra = true;
+        String codigo = tf_servivocrearcodigo.getText();
+        String nombre = tf_servivocrearnombre.getText();
+        int poder = Integer.parseInt(js_serviviocrearpoder.getValue().toString());
+        int anios = Integer.parseInt(js_servivocrearanios.getValue().toString());
+        String uni = jcb_servivocrearuniverso.getSelectedItem().toString();
+        String raza = tf_servivocrearraza.getText();
+        if (au.getListaUniverso().size() == 0) {
+            entra = false;
+        }
+        for (Universo u : au.getListaUniverso()) {
+            for (Servivo s : u.getSeres()) {
+                if (s.getCodigo().equals(codigo) || s.getNombre().equals(nombre)) {
+                    entra = false;
+                }
+            }
+        }
         db.conectar();
-        try {
-            /*
+
+        /*
             private String codigo;
     private String nombre;
     private int poder;
     private int anios;
     private String universo;
     private String raza; 
-             */
-            String codigo = tf_servivocrearcodigo.getText();
-            String nombre = tf_servivocrearnombre.getText();
-            int poder = Integer.parseInt(js_serviviocrearpoder.getValue().toString());
-            int anios = Integer.parseInt(js_servivocrearanios.getValue().toString());
-            String uni = jcb_servivocrearuniverso.getSelectedItem().toString();
-            String raza = tf_servivocrearraza.getText();
-            db.query.execute("INSERT INTO Servivo"
-                    + " VALUES ('" + codigo + "', '" + nombre + "', '" + poder + "', '" + anios + "', '" + uni + "', '" + raza + "')");
-            db.commit();
-            for (Universo u : au.getListaUniverso()) {
-                if (u.getNombre().equals(uni)) {
-                    Servivo sv = new Servivo(codigo, nombre, poder, anios, uni, raza);
-                    u.getSeres().add(sv);
-                    int cant = u.getCantidad();
-                    cant += 1;
-                    u.setCantidad(cant);
-                    db.conectar();
-                    try {
-                        db.query.execute("update Universo set Cantidad='"+cant+"' where cuenta="+u.getNombre());
-                        db.commit();
-                    } catch (SQLException ex) {
-                        ex.printStackTrace();
+         */
+        if (entra) {
+            try {
+                db.query.execute("INSERT INTO Servivo"
+                        + " VALUES ('" + codigo + "', '" + nombre + "', '" + poder + "', '" + anios + "', '" + uni + "', '" + raza + "')");
+                db.commit();
+                for (Universo u : au.getListaUniverso()) {
+                    if (u.getNombre().equals(uni)) {
+                        Servivo sv = new Servivo(codigo, nombre, poder, anios, uni, raza);
+                        u.getSeres().add(sv);
+                        int cant = u.getCantidad();
+                        cant += 1;
+                        u.setCantidad(cant);
+                        db.conectar();
+                        try {
+                            db.query.execute("update Universo set Cantidad='" + cant + "' where cuenta=" + u.getNombre());
+                            db.commit();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                        }
+                        db.desconectar();
                     }
-                    db.desconectar();
                 }
-            }
 
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            db.desconectar();
+        } else {
+            JOptionPane.showConfirmDialog(jf_servivocrear, "ID o nombre no valido, o no hay universos ");
+
         }
-        db.desconectar();
+
+
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButton14MouseClicked
 
     /**
