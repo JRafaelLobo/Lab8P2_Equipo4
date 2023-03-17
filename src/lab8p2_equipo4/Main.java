@@ -381,6 +381,7 @@ public class Main extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         B_MainAgregar.setText("Agregar");
         B_MainAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -388,39 +389,20 @@ public class Main extends javax.swing.JFrame {
                 B_MainAgregarMouseClicked(evt);
             }
         });
+        getContentPane().add(B_MainAgregar);
+        B_MainAgregar.setBounds(46, 204, 73, 23);
 
         B_MainModificar.setText("Modificar");
+        getContentPane().add(B_MainModificar);
+        B_MainModificar.setBounds(151, 204, 81, 23);
 
         B_MainEliminar.setText("Eliminar");
+        getContentPane().add(B_MainEliminar);
+        B_MainEliminar.setBounds(302, 204, 73, 23);
 
         B_MainGuardar.setText("Guardar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(B_MainAgregar)
-                .addGap(32, 32, 32)
-                .addComponent(B_MainModificar)
-                .addGap(70, 70, 70)
-                .addComponent(B_MainEliminar)
-                .addGap(50, 50, 50)
-                .addComponent(B_MainGuardar)
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(B_MainAgregar)
-                    .addComponent(B_MainModificar)
-                    .addComponent(B_MainEliminar)
-                    .addComponent(B_MainGuardar))
-                .addContainerGap(108, Short.MAX_VALUE))
-        );
+        getContentPane().add(B_MainGuardar);
+        B_MainGuardar.setBounds(425, 204, 72, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
