@@ -13,7 +13,10 @@ import javax.swing.JPanel;
 public class Main extends javax.swing.JFrame {
 
     public Main() {
+        this.pack();
+        this.setLocationRelativeTo(null);
         initComponents();
+
     }
 
     /**
@@ -26,9 +29,10 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jf_agregar = new javax.swing.JFrame();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new Fondo("./fondo.jpg");
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        lb_EleccionCrear = new javax.swing.JLabel();
         jf_modificar = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
@@ -102,21 +106,54 @@ public class Main extends javax.swing.JFrame {
         B_MainModificar = new javax.swing.JButton();
         B_MainEliminar = new javax.swing.JButton();
         B_MainGuardar = new javax.swing.JButton();
-
-        jf_agregar.getContentPane().setLayout(null);
-
-        jPanel1.setLayout(null);
+        lb_TituloMenu = new javax.swing.JLabel();
+        Fondo_Menu = new Fondo("./fondo.jpg");
 
         jButton5.setText("Universo");
-        jPanel1.add(jButton5);
-        jButton5.setBounds(80, 90, 310, 23);
 
         jButton6.setText("Ser vivo");
-        jPanel1.add(jButton6);
-        jButton6.setBounds(80, 190, 310, 23);
 
-        jf_agregar.getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 614, 318);
+        lb_EleccionCrear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lb_EleccionCrear.setText("Que desea Crear");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(lb_EleccionCrear)))
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(lb_EleccionCrear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(jButton5)
+                .addGap(44, 44, 44)
+                .addComponent(jButton6)
+                .addGap(60, 60, 60))
+        );
+
+        javax.swing.GroupLayout jf_agregarLayout = new javax.swing.GroupLayout(jf_agregar.getContentPane());
+        jf_agregar.getContentPane().setLayout(jf_agregarLayout);
+        jf_agregarLayout.setHorizontalGroup(
+            jf_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jf_agregarLayout.setVerticalGroup(
+            jf_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         jf_modificar.getContentPane().setLayout(null);
 
@@ -401,7 +438,10 @@ public class Main extends javax.swing.JFrame {
         jPanel9.setBounds(-32768, -32768, 100, 100);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setTitle("Menu");
+        setMaximumSize(new java.awt.Dimension(470, 200));
+        setMinimumSize(new java.awt.Dimension(470, 200));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         B_MainAgregar.setText("Agregar");
         B_MainAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -409,20 +449,21 @@ public class Main extends javax.swing.JFrame {
                 B_MainAgregarMouseClicked(evt);
             }
         });
-        getContentPane().add(B_MainAgregar);
-        B_MainAgregar.setBounds(46, 204, 73, 23);
+        getContentPane().add(B_MainAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         B_MainModificar.setText("Modificar");
-        getContentPane().add(B_MainModificar);
-        B_MainModificar.setBounds(151, 204, 81, 23);
+        getContentPane().add(B_MainModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         B_MainEliminar.setText("Eliminar");
-        getContentPane().add(B_MainEliminar);
-        B_MainEliminar.setBounds(302, 204, 73, 23);
+        getContentPane().add(B_MainEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
 
         B_MainGuardar.setText("Guardar");
-        getContentPane().add(B_MainGuardar);
-        B_MainGuardar.setBounds(425, 204, 72, 23);
+        getContentPane().add(B_MainGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+
+        lb_TituloMenu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lb_TituloMenu.setText("Menu");
+        getContentPane().add(lb_TituloMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 70, 40));
+        getContentPane().add(Fondo_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -619,6 +660,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton B_MainEliminar;
     private javax.swing.JButton B_MainGuardar;
     private javax.swing.JButton B_MainModificar;
+    private javax.swing.JPanel Fondo_Menu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -684,6 +726,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSpinner js_serviviocrearpoder1;
     private javax.swing.JSpinner js_servivocrearanios;
     private javax.swing.JSpinner js_servivocrearanios1;
+    private javax.swing.JLabel lb_EleccionCrear;
+    private javax.swing.JLabel lb_TituloMenu;
     private javax.swing.JTextField tf_servivocrearcodigo;
     private javax.swing.JTextField tf_servivocrearcodigo1;
     private javax.swing.JTextField tf_servivocrearnombre;
