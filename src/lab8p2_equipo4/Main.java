@@ -1,6 +1,10 @@
 package lab8p2_equipo4;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
 
@@ -379,6 +383,11 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         B_MainAgregar.setText("Agregar");
+        B_MainAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                B_MainAgregarMouseClicked(evt);
+            }
+        });
 
         B_MainModificar.setText("Modificar");
 
@@ -419,21 +428,38 @@ public class Main extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Dba db = new Dba("./base1.mdb");
         db.conectar();
-        try {
+        
+            boolean entra=true;
             String n;
             n = tf_universocrearnombre.getText();
             for (Universo u : universos) {
-                
+                if (u.getNombre().equals(n)) {
+                    entra=false;
+                }
             }
-            db.query.execute("INSERT INTO alumnos"
-                    + " ()"
-                    + " VALUES ('" + c + "', '" + n + "')");
-            db.commit();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        db.desconectar();
+            if (entra) {
+            try {
+                db.query.execute("INSERT INTO Universo"
+                        + " VALUES ('" + n + "', '" + 0 + "')");
+                db.commit();
+                db.desconectar();
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            tf_universocrearnombre.setText("");
+            jf_ucreate.setVisible(false);
+            }else{
+                JOptionPane.showConfirmDialog(jf_ucreate, "Nombre no disponible");
+            }
+            
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void B_MainAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_MainAgregarMouseClicked
+         jf_agregar.pack();
+        jf_agregar.setLocationRelativeTo(this);
+        this.setVisible(false);
+        jf_agregar.setVisible(true);
+    }//GEN-LAST:event_B_MainAgregarMouseClicked
 
     /**
      * @param args the command line arguments

@@ -650,6 +650,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="B_MainAgregarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="B_MainModificar">
       <Properties>
