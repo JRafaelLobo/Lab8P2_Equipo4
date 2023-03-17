@@ -54,8 +54,23 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jcb_borraru = new javax.swing.JComboBox<>();
-        jf_sercrear = new javax.swing.JFrame();
         jf_sermodificar = new javax.swing.JFrame();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jcb_servivocrearuniverso1 = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        tf_servivocrearraza1 = new javax.swing.JTextField();
+        tf_servivocrearcodigo1 = new javax.swing.JTextField();
+        tf_servivocrearnombre1 = new javax.swing.JTextField();
+        js_serviviocrearpoder1 = new javax.swing.JSpinner();
+        jButton14 = new javax.swing.JButton();
+        js_servivocrearanios1 = new javax.swing.JSpinner();
+        jLabel18 = new javax.swing.JLabel();
+        jcb_servivomodificarseres = new javax.swing.JComboBox<>();
         jf_eliminarser = new javax.swing.JFrame();
         jFrame1 = new javax.swing.JFrame();
         jPanel8 = new javax.swing.JPanel();
@@ -333,26 +348,80 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jf_sercrearLayout = new javax.swing.GroupLayout(jf_sercrear.getContentPane());
-        jf_sercrear.getContentPane().setLayout(jf_sercrearLayout);
-        jf_sercrearLayout.setHorizontalGroup(
-            jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jf_sercrearLayout.setVerticalGroup(
-            jf_sercrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jPanel10.setLayout(null);
+
+        jLabel12.setText("Codigo:");
+        jPanel10.add(jLabel12);
+        jLabel12.setBounds(80, 80, 90, 16);
+
+        jLabel13.setText("Nombre:");
+        jPanel10.add(jLabel13);
+        jLabel13.setBounds(80, 140, 80, 16);
+
+        jLabel14.setText("Poder:");
+        jPanel10.add(jLabel14);
+        jLabel14.setBounds(80, 200, 34, 16);
+
+        jLabel15.setText("Años:");
+        jPanel10.add(jLabel15);
+        jLabel15.setBounds(80, 270, 30, 16);
+
+        jLabel16.setText("Universo:");
+        jPanel10.add(jLabel16);
+        jLabel16.setBounds(80, 330, 60, 16);
+
+        jcb_servivocrearuniverso1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(jcb_servivocrearuniverso1);
+        jcb_servivocrearuniverso1.setBounds(180, 320, 460, 22);
+
+        jLabel17.setText("Raza:");
+        jPanel10.add(jLabel17);
+        jLabel17.setBounds(80, 390, 50, 16);
+        jPanel10.add(tf_servivocrearraza1);
+        tf_servivocrearraza1.setBounds(170, 380, 470, 22);
+        jPanel10.add(tf_servivocrearcodigo1);
+        tf_servivocrearcodigo1.setBounds(170, 80, 470, 22);
+        jPanel10.add(tf_servivocrearnombre1);
+        tf_servivocrearnombre1.setBounds(170, 140, 470, 22);
+
+        js_serviviocrearpoder1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+        jPanel10.add(js_serviviocrearpoder1);
+        js_serviviocrearpoder1.setBounds(170, 200, 460, 22);
+
+        jButton14.setText("Agegar");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+        jPanel10.add(jButton14);
+        jButton14.setBounds(740, 530, 72, 23);
+
+        js_servivocrearanios1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel10.add(js_servivocrearanios1);
+        js_servivocrearanios1.setBounds(170, 260, 450, 22);
+
+        jLabel18.setText("Ser vivo:");
+        jPanel10.add(jLabel18);
+        jLabel18.setBounds(80, 40, 60, 16);
+
+        jcb_servivomodificarseres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(jcb_servivomodificarseres);
+        jcb_servivomodificarseres.setBounds(170, 30, 470, 22);
 
         javax.swing.GroupLayout jf_sermodificarLayout = new javax.swing.GroupLayout(jf_sermodificar.getContentPane());
         jf_sermodificar.getContentPane().setLayout(jf_sermodificarLayout);
         jf_sermodificarLayout.setHorizontalGroup(
             jf_sermodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jf_sermodificarLayout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 926, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jf_sermodificarLayout.setVerticalGroup(
             jf_sermodificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jf_sermodificarLayout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jf_eliminarserLayout = new javax.swing.GroupLayout(jf_eliminarser.getContentPane());
@@ -627,6 +696,10 @@ public class Main extends javax.swing.JFrame {
         db.desconectar();
     }//GEN-LAST:event_jButton13MouseClicked
 
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -671,6 +744,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -684,6 +758,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -693,6 +774,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -705,23 +787,29 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> jcb_borraru;
     private javax.swing.JComboBox<String> jcb_servivocrearuniverso;
+    private javax.swing.JComboBox<String> jcb_servivocrearuniverso1;
+    private javax.swing.JComboBox<String> jcb_servivomodificarseres;
     private javax.swing.JComboBox<String> jcb_universoamodificar;
     private javax.swing.JFrame jf_agregar;
     private javax.swing.JFrame jf_cargar;
     private javax.swing.JFrame jf_eliminar;
     private javax.swing.JFrame jf_eliminarser;
     private javax.swing.JFrame jf_modificar;
-    private javax.swing.JFrame jf_sercrear;
     private javax.swing.JFrame jf_sermodificar;
     private javax.swing.JFrame jf_servivocrear;
     private javax.swing.JFrame jf_ucreate;
     private javax.swing.JFrame jf_udelete;
     private javax.swing.JFrame jframe_umod;
     private javax.swing.JSpinner js_serviviocrearpoder;
+    private javax.swing.JSpinner js_serviviocrearpoder1;
     private javax.swing.JSpinner js_servivocrearanios;
+    private javax.swing.JSpinner js_servivocrearanios1;
     private javax.swing.JTextField tf_servivocrearcodigo;
+    private javax.swing.JTextField tf_servivocrearcodigo1;
     private javax.swing.JTextField tf_servivocrearnombre;
+    private javax.swing.JTextField tf_servivocrearnombre1;
     private javax.swing.JTextField tf_servivocrearraza;
+    private javax.swing.JTextField tf_servivocrearraza1;
     private javax.swing.JTextField tf_universocrearnombre;
     private javax.swing.JTextField tf_universomodificarnombre;
     // End of variables declaration//GEN-END:variables
