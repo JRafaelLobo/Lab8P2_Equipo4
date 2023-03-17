@@ -13,20 +13,18 @@ public class Servivo {
     private String nombre;
     private int poder;
     private int anios;
-    private int universocodigo;
     private String universo;
     private String raza; 
 
-    public Servivo(String codigo, String nombre, int poder, int anios, int universocodigo, String universo, String raza) {
+    public Servivo(String codigo, String nombre, int poder, int anios, String universo, String raza) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.poder = poder;
         this.anios = anios;
-        this.universocodigo = universocodigo;
         this.universo = universo;
         this.raza = raza;
     }
-
+    
     public Servivo() {
     }
 
@@ -60,14 +58,6 @@ public class Servivo {
 
     public void setAnios(int anios) {
         this.anios = anios;
-    }
-
-    public int getUniversocodigo() {
-        return universocodigo;
-    }
-
-    public void setUniversocodigo(int universocodigo) {
-        this.universocodigo = universocodigo;
     }
 
     public String getUniverso() {

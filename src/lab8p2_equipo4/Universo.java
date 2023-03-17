@@ -9,30 +9,23 @@ package lab8p2_equipo4;
  * @author Gabriela Montes
  */
 public class Universo {
-    private int codigo;
     private String nombre;
     private String cantidad;
 
-    public Universo(int codigo, String nombre, String cantidad) {
-        this.codigo = codigo;
+    public Universo(String nombre, String cantidad) {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
+    
 
     public Universo() {
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
 
     public String getNombre() {
         return nombre;
     }
+    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -48,7 +41,7 @@ public class Universo {
 
     @Override
     public String toString() {
-        return codigo+" "+nombre;
+        return nombre;
     }
     
     
