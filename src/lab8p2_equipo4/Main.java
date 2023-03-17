@@ -61,17 +61,20 @@ public class Main extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jcb_servivocrearuniverso1 = new javax.swing.JComboBox<>();
+        jcb_servivomodificaruniverso = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        tf_servivocrearraza1 = new javax.swing.JTextField();
-        tf_servivocrearcodigo1 = new javax.swing.JTextField();
-        tf_servivocrearnombre1 = new javax.swing.JTextField();
-        js_serviviocrearpoder1 = new javax.swing.JSpinner();
+        tf_servivomodificarraza = new javax.swing.JTextField();
+        tf_servivomodificarcodigo = new javax.swing.JTextField();
+        tf_servivomodificarnombre = new javax.swing.JTextField();
+        js_serviviomodificarpoder = new javax.swing.JSpinner();
         jButton14 = new javax.swing.JButton();
-        js_servivocrearanios1 = new javax.swing.JSpinner();
+        js_servivomodificaranios = new javax.swing.JSpinner();
         jLabel18 = new javax.swing.JLabel();
         jcb_servivomodificarseres = new javax.swing.JComboBox<>();
         jf_eliminarser = new javax.swing.JFrame();
+        jLabel19 = new javax.swing.JLabel();
+        jb_servivoeliminar = new javax.swing.JButton();
+        jcb_servivoeliminar = new javax.swing.JComboBox<>();
         jFrame1 = new javax.swing.JFrame();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -259,23 +262,23 @@ public class Main extends javax.swing.JFrame {
         jPanel10.add(jLabel16);
         jLabel16.setBounds(80, 330, 60, 16);
 
-        jcb_servivocrearuniverso1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel10.add(jcb_servivocrearuniverso1);
-        jcb_servivocrearuniverso1.setBounds(180, 320, 460, 22);
+        jcb_servivomodificaruniverso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel10.add(jcb_servivomodificaruniverso);
+        jcb_servivomodificaruniverso.setBounds(180, 320, 460, 22);
 
         jLabel17.setText("Raza:");
         jPanel10.add(jLabel17);
         jLabel17.setBounds(80, 390, 50, 16);
-        jPanel10.add(tf_servivocrearraza1);
-        tf_servivocrearraza1.setBounds(170, 380, 470, 22);
-        jPanel10.add(tf_servivocrearcodigo1);
-        tf_servivocrearcodigo1.setBounds(170, 80, 470, 22);
-        jPanel10.add(tf_servivocrearnombre1);
-        tf_servivocrearnombre1.setBounds(170, 140, 470, 22);
+        jPanel10.add(tf_servivomodificarraza);
+        tf_servivomodificarraza.setBounds(170, 380, 470, 22);
+        jPanel10.add(tf_servivomodificarcodigo);
+        tf_servivomodificarcodigo.setBounds(170, 80, 470, 22);
+        jPanel10.add(tf_servivomodificarnombre);
+        tf_servivomodificarnombre.setBounds(170, 140, 470, 22);
 
-        js_serviviocrearpoder1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
-        jPanel10.add(js_serviviocrearpoder1);
-        js_serviviocrearpoder1.setBounds(170, 200, 460, 22);
+        js_serviviomodificarpoder.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
+        jPanel10.add(js_serviviomodificarpoder);
+        js_serviviomodificarpoder.setBounds(170, 200, 460, 22);
 
         jButton14.setText("Agegar");
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,11 +287,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButton14);
-        jButton14.setBounds(740, 530, 72, 23);
+        jButton14.setBounds(612, 513, 200, 40);
 
-        js_servivocrearanios1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel10.add(js_servivocrearanios1);
-        js_servivocrearanios1.setBounds(170, 260, 450, 22);
+        js_servivomodificaranios.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel10.add(js_servivomodificaranios);
+        js_servivomodificaranios.setBounds(170, 260, 450, 22);
 
         jLabel18.setText("Ser vivo:");
         jPanel10.add(jLabel18);
@@ -302,6 +305,23 @@ public class Main extends javax.swing.JFrame {
         jPanel10.setBounds(0, 0, 0, 0);
 
         jf_eliminarser.getContentPane().setLayout(null);
+
+        jLabel19.setText("Ser vivo:");
+        jf_eliminarser.getContentPane().add(jLabel19);
+        jLabel19.setBounds(40, 50, 44, 16);
+
+        jb_servivoeliminar.setText("Eliminar");
+        jb_servivoeliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_servivoeliminarMouseClicked(evt);
+            }
+        });
+        jf_eliminarser.getContentPane().add(jb_servivoeliminar);
+        jb_servivoeliminar.setBounds(550, 200, 73, 23);
+
+        jcb_servivoeliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jf_eliminarser.getContentPane().add(jcb_servivoeliminar);
+        jcb_servivoeliminar.setBounds(130, 50, 530, 22);
 
         jFrame1.getContentPane().setLayout(null);
 
@@ -573,8 +593,85 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+ boolean entra = true;
+        String codigo = tf_servivomodificarcodigo.getText();
+        String nombre = tf_servivomodificarnombre.getText();
+        int poder = Integer.parseInt(js_serviviomodificarpoder.getValue().toString());
+        int anios = Integer.parseInt(js_servivomodificaranios.getValue().toString());
+        String uni = jcb_servivomodificarseres.getSelectedItem().toString();
+        String raza = tf_servivomodificarraza.getText();
+        if (au.getListaUniverso().size() == 0) {
+            entra = false;
+        }
+        for (Universo u : au.getListaUniverso()) {
+            for (Servivo s : u.getSeres()) {
+                if (s.getCodigo().equals(codigo) || s.getNombre().equals(nombre)) {
+                    entra = false;
+                }
+            }
+        }
+        db.conectar();
+
+        /*
+            private String codigo;
+    private String nombre;
+    private int poder;
+    private int anios;
+    private String universo;
+    private String raza; 
+         */
+        if (entra) {
+            db.conectar();
+            try {
+                db.query.execute("update alumnos set codigo="+codigo+", set Nombre="+nombre+", set Poder="+poder+",set Anios="+anios+",set Universo="+uni+", set Raza="+raza+ " where Nombre="+jcb_servivomodificarseres.getSelectedItem().toString());
+                db.commit();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            db.desconectar();
+            for (Universo u : au.getListaUniverso()) {
+                for (Servivo s: u.getSeres()) {
+                    if (s.getNombre().equals(jcb_servivomodificarseres.getSelectedItem().toString())) {
+                        s.setNombre(nombre);
+                        s.setCodigo(codigo);
+                        s.setAnios(anios);
+                        s.setPoder(poder);
+                        s.setRaza(raza);
+                        s.setUniverso(uni);
+                    }
+                }
+                
+            }
+            db.desconectar();
+            jf_modificar.setVisible(false);
+        } else {
+            JOptionPane.showConfirmDialog(jf_sermodificar, "ID o nombre no valido, o no hay universos ");
+
+        }
+
+
+                          
 
     }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jb_servivoeliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_servivoeliminarMouseClicked
+      String nombre = jcb_servivoeliminar.getSelectedItem().toString();
+       ArrayList<Universo> remove = au.getListaUniverso();
+        ArrayList<Universo> add = new ArrayList();
+        db.conectar();
+
+        try {
+            for (Universo : remove) {
+                
+            }
+            au.setListaPersonas(add);
+            db.query.execute("delete from Servivo where Nombre=" + nombre);
+            db.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.desconectar();
+    }//GEN-LAST:event_jb_servivoeliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -641,6 +738,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -661,10 +759,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jb_servivoeliminar;
     private javax.swing.JComboBox<String> jcb_borraru;
     private javax.swing.JComboBox<String> jcb_servivocrearuniverso;
-    private javax.swing.JComboBox<String> jcb_servivocrearuniverso1;
+    private javax.swing.JComboBox<String> jcb_servivoeliminar;
     private javax.swing.JComboBox<String> jcb_servivomodificarseres;
+    private javax.swing.JComboBox<String> jcb_servivomodificaruniverso;
     private javax.swing.JComboBox<String> jcb_universoamodificar;
     private javax.swing.JFrame jf_agregar;
     private javax.swing.JFrame jf_cargar;
@@ -677,15 +777,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame jf_udelete;
     private javax.swing.JFrame jframe_umod;
     private javax.swing.JSpinner js_serviviocrearpoder;
-    private javax.swing.JSpinner js_serviviocrearpoder1;
+    private javax.swing.JSpinner js_serviviomodificarpoder;
     private javax.swing.JSpinner js_servivocrearanios;
-    private javax.swing.JSpinner js_servivocrearanios1;
+    private javax.swing.JSpinner js_servivomodificaranios;
     private javax.swing.JTextField tf_servivocrearcodigo;
-    private javax.swing.JTextField tf_servivocrearcodigo1;
     private javax.swing.JTextField tf_servivocrearnombre;
-    private javax.swing.JTextField tf_servivocrearnombre1;
     private javax.swing.JTextField tf_servivocrearraza;
-    private javax.swing.JTextField tf_servivocrearraza1;
+    private javax.swing.JTextField tf_servivomodificarcodigo;
+    private javax.swing.JTextField tf_servivomodificarnombre;
+    private javax.swing.JTextField tf_servivomodificarraza;
     private javax.swing.JTextField tf_universocrearnombre;
     private javax.swing.JTextField tf_universomodificarnombre;
     // End of variables declaration//GEN-END:variables
