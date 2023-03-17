@@ -839,7 +839,7 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     Dba db = new Dba("./Tabladeuniverso");
-    AdminUniverso au = new AdminUniverso("./universosdelprograma.cbm");
+    AdminSerVivos au = new AdminSerVivos("./universosdelprograma.cbm");
 
     class Fondo extends JPanel {
 

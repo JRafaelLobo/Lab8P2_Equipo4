@@ -12,17 +12,17 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class AdminUniverso {
+public class AdminSerVivos {
 
-    private ArrayList<Universo> ListaUniverso = new ArrayList();
+    private ArrayList<Servivo> SeresVivos = new ArrayList();
     private File archivo = null;
 
-    public AdminUniverso(String Ruta) {
+    public AdminSerVivos(String Ruta) {
         File archivo = new File(Ruta);
     }
 
-    public void setListaPersonas(ArrayList<Universo> ListaUniverso) {
-        this.ListaUniverso = ListaUniverso;
+    public void setListaPersonas(ArrayList<Servivo> SeresVivos) {
+        this.SeresVivos = SeresVivos;
     }
 
     public File getArchivo() {
@@ -33,27 +33,26 @@ public class AdminUniverso {
         this.archivo = archivo;
     }
 
-    public void setAlumno(Universo a) {
-        ListaUniverso.add(a);
+    public void setAlumno(Servivo a) {
+        SeresVivos.add(a);
     }
 
-    public ArrayList<Universo> getListaUniverso() {
-        return ListaUniverso;
+    public ArrayList<Servivo> getListaUniverso() {
+        return SeresVivos;
     }
-    
 
     public void cargarArchivo() {
         try {
-            ListaUniverso = new ArrayList();
-            Universo temp;
+            SeresVivos = new ArrayList();
+            Servivo temp;
             if (archivo.exists()) {
                 FileInputStream entrada
                         = new FileInputStream(archivo);
                 ObjectInputStream objeto
                         = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (Universo) objeto.readObject()) != null) {
-                        ListaUniverso.add(temp);
+                    while ((temp = (Servivo) objeto.readObject()) != null) {
+                        SeresVivos.add(temp);
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo
@@ -72,7 +71,7 @@ public class AdminUniverso {
         try {
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
-            for (Universo t : ListaUniverso) {
+            for (Servivo t : SeresVivos) {
                 bw.writeObject(t);
             }
             bw.flush();
