@@ -19,11 +19,10 @@ public class Main extends javax.swing.JFrame {
         jFrame2 = new javax.swing.JFrame();
         jFrame3 = new javax.swing.JFrame();
         jFrame4 = new javax.swing.JFrame();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        B_MainAgregar = new javax.swing.JButton();
+        B_MainModificar = new javax.swing.JButton();
+        B_MainEliminar = new javax.swing.JButton();
+        B_MainGuardar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jf_agregarLayout = new javax.swing.GroupLayout(jf_agregar.getContentPane());
         jf_agregar.getContentPane().setLayout(jf_agregarLayout);
@@ -71,45 +70,38 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Agregar");
+        B_MainAgregar.setText("Agregar");
 
-        jButton2.setText("Modificar");
+        B_MainModificar.setText("Modificar");
 
-        jButton3.setText("Eliminar");
+        B_MainEliminar.setText("Eliminar");
 
-        jButton4.setText("Guardar");
+        B_MainGuardar.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jButton1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton2)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton3)
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton4)))
+                .addGap(46, 46, 46)
+                .addComponent(B_MainAgregar)
+                .addGap(32, 32, 32)
+                .addComponent(B_MainModificar)
+                .addGap(70, 70, 70)
+                .addComponent(B_MainEliminar)
+                .addGap(50, 50, 50)
+                .addComponent(B_MainGuardar)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(204, 204, 204)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(B_MainAgregar)
+                    .addComponent(B_MainModificar)
+                    .addComponent(B_MainEliminar)
+                    .addComponent(B_MainGuardar))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -151,14 +143,13 @@ public class Main extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton B_MainAgregar;
+    private javax.swing.JButton B_MainEliminar;
+    private javax.swing.JButton B_MainGuardar;
+    private javax.swing.JButton B_MainModificar;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
     private javax.swing.JFrame jFrame4;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JFrame jf_agregar;
     // End of variables declaration//GEN-END:variables
 }
