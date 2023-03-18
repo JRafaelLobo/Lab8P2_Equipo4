@@ -310,13 +310,7 @@ public class Main extends javax.swing.JFrame {
         jframe_umod.getContentPane().add(jPanel6);
         jPanel6.setBounds(0, 0, 0, 0);
 
-        jf_udelete.getContentPane().setLayout(null);
-
-        jPanel7.setLayout(null);
-
         jLabel4.setText("Nombre:");
-        jPanel7.add(jLabel4);
-        jLabel4.setBounds(0, 0, 0, 0);
 
         jButton3.setText("Agregar");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -324,15 +318,44 @@ public class Main extends javax.swing.JFrame {
                 jButton3MouseClicked(evt);
             }
         });
-        jPanel7.add(jButton3);
-        jButton3.setBounds(0, 0, 0, 0);
 
         jcb_borraru.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel7.add(jcb_borraru);
-        jcb_borraru.setBounds(-32575, -32671, 72, 22);
 
-        jf_udelete.getContentPane().add(jPanel7);
-        jPanel7.setBounds(0, 0, 0, 0);
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jcb_borraru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(32575, 32575, 32575)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jButton3)))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jcb_borraru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33499, 33499, 33499)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jButton3)))
+        );
+
+        javax.swing.GroupLayout jf_udeleteLayout = new javax.swing.GroupLayout(jf_udelete.getContentPane());
+        jf_udelete.getContentPane().setLayout(jf_udeleteLayout);
+        jf_udeleteLayout.setHorizontalGroup(
+            jf_udeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_udeleteLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jf_udeleteLayout.setVerticalGroup(
+            jf_udeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_udeleteLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jf_sermodificar.getContentPane().setLayout(null);
 
