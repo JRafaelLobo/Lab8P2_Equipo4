@@ -24,6 +24,12 @@ public class Servivo {
         this.universo = universo;
         this.raza = raza;
     }
+
+    public Servivo(String codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+    
     
     public Servivo() {
     }

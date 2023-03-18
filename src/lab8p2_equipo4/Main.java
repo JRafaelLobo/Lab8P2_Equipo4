@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.sql.ResultSet;
+import java.util.Collections;
+import org.hsqldb.lib.Collection;
 
 public class Main extends javax.swing.JFrame {
 
@@ -717,16 +719,7 @@ public class Main extends javax.swing.JFrame {
         String n;
         n = tf_universocrearnombre.getText();
         db.conectar();
-        try {
-            db.query.execute("select Nombre from Universo");
-            ResultSet rs = db.query.getResultSet();
-            while (rs.next()) {
-                Universo uni = new Universo(rs.getString(2));
-                universoslista.add(uni);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+        agregar();
         for (Universo u : universoslista) {
             if (u.getNombre().equals(n)) {
                 entra = false;
@@ -762,16 +755,7 @@ public class Main extends javax.swing.JFrame {
         boolean entra = true;
         String n;
         n = tf_universomodificarnombre.getText();
-        try {
-            db.query.execute("select Nombre from Universo");
-            ResultSet rs = db.query.getResultSet();
-            while (rs.next()) {
-                Universo uni = new Universo(rs.getString(2));
-                universoslista.add(uni);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+        agregar();
         for (Universo u : universoslista) {
             if (u.getNombre().equals(n)) {
                 entra = false;
@@ -787,25 +771,20 @@ public class Main extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
             db.desconectar();
+            tf_universomodificarnombre.setText("");
+            jframe_umod.setVisible(false);
         } else {
             JOptionPane.showConfirmDialog(jframe_umod, "Nombre no disponible");
+            tf_universomodificarnombre.setText("");
         }
 
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        ArrayList<Universo> remove = universoslista;
-        ArrayList<Universo> add = new ArrayList();
-        db.conectar();
 
+        db.conectar();
         try {
-            for (Universo u : remove) {
-                if (!(u.getNombre().equals(jcb_borraru.getSelectedItem().toString()))) {
-                    add.add(u);
-                }
-            }
-            universoslista = add;
-            db.query.execute("delete from alumnos where Nombre=" + jcb_borraru.getSelectedItem().toString());
+            db.query.execute("delete from Servivo where Nombre=" + jcb_borraru.getSelectedItem().toString());
             db.commit();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -821,18 +800,10 @@ public class Main extends javax.swing.JFrame {
         int anios = Integer.parseInt(js_servivocrearanios.getValue().toString());
         String uni = jcb_servivocrearuniverso.getSelectedItem().toString();
         String raza = tf_servivocrearraza.getText();
-        if (au.getListaUniverso().size() == 0) {
+        agregarser();
+        agregar();
+        if (universoslista.size() == 0) {
             entra = false;
-        }
-        try {
-            db.query.execute("select * from Servivo");
-            ResultSet rs = db.query.getResultSet();
-            while (rs.next()) {
-                Servivo ser = new Servivo(rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getString(6), rs.getString(7));
-                servivolista.add(ser);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
 
         for (Servivo s : servivolista) {
@@ -856,27 +827,23 @@ public class Main extends javax.swing.JFrame {
                 db.query.execute("INSERT INTO Servivo"
                         + " VALUES ('" + codigo + "', '" + nombre + "', '" + poder + "', '" + anios + "', '" + uni + "', '" + raza + "')");
                 db.commit();
+                int cant = 0;
                 try {
                     db.query.execute("select Cantidad from Universo where Nombre=" + jcb_servivocrearuniverso.getSelectedItem().toString());
                     ResultSet rs = db.query.getResultSet();
                     while (rs.next()) {
-                        int cant = rs
+                        cant = rs.getInt(3);
+                    }
+                    try {
+                        db.query.execute("update Universo set Cantidad='" + cant + "' where Nombre=" + jcb_servivocrearuniverso.getSelectedItem().toString());
+                        db.commit();
+
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-
-                int cant = u.getCantidad();
-                cant += 1;
-                u.setCantidad(cant);
-                db.conectar();
-                try {
-                    db.query.execute("update Universo set Cantidad='" + cant + "' where cuenta=" + u.getNombre());
-                    db.commit();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-                db.desconectar();
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -898,14 +865,14 @@ public class Main extends javax.swing.JFrame {
         int anios = Integer.parseInt(js_servivomodificaranios.getValue().toString());
         String uni = jcb_servivomodificarseres.getSelectedItem().toString();
         String raza = tf_servivomodificarraza.getText();
-        if (au.getListaUniverso().size() == 0) {
+        agregar();
+        agregarser();
+        if (universoslista.size() == 0) {
             entra = false;
         }
-        for (Universo u : au.getListaUniverso()) {
-            for (Servivo s : u.getSeres()) {
-                if (s.getCodigo().equals(codigo) || s.getNombre().equals(nombre)) {
-                    entra = false;
-                }
+        for (Servivo s : servivolista) {
+            if (s.getCodigo().equals(codigo) || s.getNombre().equals(nombre)) {
+                entra = false;
             }
         }
         db.conectar();
@@ -927,19 +894,6 @@ public class Main extends javax.swing.JFrame {
                 ex.printStackTrace();
             }
             db.desconectar();
-            for (Universo u : au.getListaUniverso()) {
-                for (Servivo s : u.getSeres()) {
-                    if (s.getNombre().equals(jcb_servivomodificarseres.getSelectedItem().toString())) {
-                        s.setNombre(nombre);
-                        s.setCodigo(codigo);
-                        s.setAnios(anios);
-                        s.setPoder(poder);
-                        s.setRaza(raza);
-                        s.setUniverso(uni);
-                    }
-                }
-
-            }
             db.desconectar();
             jf_modificar.setVisible(false);
         } else {
@@ -952,35 +906,40 @@ public class Main extends javax.swing.JFrame {
 
     private void jb_servivoeliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_servivoeliminarMouseClicked
         String nombre = jcb_servivoeliminar.getSelectedItem().toString();
-        ArrayList<Universo> remove = au.getListaUniverso();
-        ArrayList<Servivo> add = new ArrayList();
-        db.conectar();
-
         try {
-            for (Universo u : remove) {
-                for (Servivo s : u.getSeres()) {
-                    if (!(s.getNombre().equals(nombre))) {
-                        add.add(s);
-                    } else {
-                        int cant = u.getCantidad();
-                        cant -= 1;
-                        u.setCantidad(cant);
-                        db.conectar();
-                        try {
-                            db.query.execute("update Universo set Cantidad='" + cant + "' where cuenta=" + u.getNombre());
-                            db.commit();
-                        } catch (SQLException ex) {
-                            ex.printStackTrace();
-                        }
-                        db.desconectar();
-                    }
-                }
-                u.setSeres(add);
+            int cant = 0;
+            db.query.execute("select Cantidad from Universo where Nombre=" + jcb_servivocrearuniverso.getSelectedItem().toString());
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                cant = rs.getInt(3);
             }
+            try {
+                String u="";
+                db.query.execute("select Universo from Servivo where Nombre=" + nombre);
+                    ResultSet rs2 = db.query.getResultSet();
+            while (rs2.next()) {
+                u=rs2.getString(6);
+                   try {
+                db.query.execute("update Universo set Cantidad='" + cant + "' where Nombre=" + u);
+                db.commit();
 
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            }
+                db.commit();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+         
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        db.conectar();
+        try {
             db.query.execute("delete from Servivo where Nombre=" + nombre);
             db.commit();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -1150,6 +1109,34 @@ public class Main extends javax.swing.JFrame {
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
+        }
+    }
+
+    public void agregar() {
+        universoslista.clear();
+        try {
+            db.query.execute("select Nombre from Universo");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                Universo uni = new Universo(rs.getString(2));
+                universoslista.add(uni);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void agregarser() {
+        servivolista.clear();
+        try {
+            db.query.execute("select codigo, Nombre from Universo");
+            ResultSet rs = db.query.getResultSet();
+            while (rs.next()) {
+                Servivo ser = new Servivo(rs.getString(2), rs.getString(3));
+                servivolista.add(ser);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
     }
 }
