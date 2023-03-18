@@ -89,7 +89,8 @@ public class Main extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jf_servivocrear = new javax.swing.JFrame();
-        jPanel9 = new javax.swing.JPanel();
+        jPanel9 = new Fondo("./fondo.jpg")
+        ;
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -100,18 +101,21 @@ public class Main extends javax.swing.JFrame {
         tf_servivocrearraza = new javax.swing.JTextField();
         tf_servivocrearcodigo = new javax.swing.JTextField();
         tf_servivocrearnombre = new javax.swing.JTextField();
-        js_serviviocrearpoder = new javax.swing.JSpinner();
-        jButton13 = new javax.swing.JButton();
         js_servivocrearanios = new javax.swing.JSpinner();
-        jcb_universoamodificar = new javax.swing.JComboBox<>();
+        jButton13 = new javax.swing.JButton();
+        js_serviviocrearpoder = new javax.swing.JSpinner();
         jFrame2 = new javax.swing.JFrame();
         jLabel20 = new javax.swing.JLabel();
+        jPanel12 = new Fondo("./fondo.jpg");
+        jcb_universoamodificar = new javax.swing.JComboBox<>();
         jPanel11 = new Fondo("./fondo.jpg");
         B_MainAgregar = new javax.swing.JButton();
         B_MainModificar = new javax.swing.JButton();
         B_MainEliminar = new javax.swing.JButton();
         B_MainGuardar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
+
+        jf_agregar.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton5.setText("Universo");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -121,6 +125,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton6.setText("Ser vivo");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setText("Elejir");
@@ -168,6 +177,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jf_modificar.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jf_modificar.getContentPane().setLayout(null);
 
         jPanel2.setLayout(null);
@@ -183,6 +193,7 @@ public class Main extends javax.swing.JFrame {
         jf_modificar.getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 0, 0);
 
+        jf_eliminar.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jf_eliminar.getContentPane().setLayout(null);
 
         jPanel3.setLayout(null);
@@ -198,6 +209,7 @@ public class Main extends javax.swing.JFrame {
         jf_eliminar.getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 0, 0, 0);
 
+        jf_cargar.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jf_cargar.getContentPane().setLayout(null);
 
         jPanel4.setLayout(null);
@@ -212,6 +224,8 @@ public class Main extends javax.swing.JFrame {
 
         jf_cargar.getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 0, 0, 0);
+
+        jf_ucreate.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel23.setText("Crear Universo");
@@ -229,20 +243,21 @@ public class Main extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(175, 175, 175))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jLabel23))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_universocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jButton1)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_universocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(162, 162, 162)
+                            .addComponent(jLabel23))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(36, 36, 36)
+                            .addComponent(jLabel1))))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,9 +268,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tf_universocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(jButton1)
-                .addGap(70, 70, 70))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jf_ucreateLayout = new javax.swing.GroupLayout(jf_ucreate.getContentPane());
@@ -444,47 +459,23 @@ public class Main extends javax.swing.JFrame {
         jFrame1.getContentPane().add(jPanel8);
         jPanel8.setBounds(-32768, -32768, 100, 100);
 
-        jf_servivocrear.getContentPane().setLayout(null);
-
-        jPanel9.setLayout(null);
+        jf_servivocrear.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setText("Codigo:");
-        jPanel9.add(jLabel6);
-        jLabel6.setBounds(80, 80, 90, 16);
 
         jLabel7.setText("Nombre:");
-        jPanel9.add(jLabel7);
-        jLabel7.setBounds(80, 140, 80, 16);
 
         jLabel8.setText("Poder:");
-        jPanel9.add(jLabel8);
-        jLabel8.setBounds(80, 200, 34, 16);
 
         jLabel9.setText("Años:");
-        jPanel9.add(jLabel9);
-        jLabel9.setBounds(80, 270, 30, 16);
 
         jLabel10.setText("Universo:");
-        jPanel9.add(jLabel10);
-        jLabel10.setBounds(80, 330, 60, 16);
 
         jcb_servivocrearuniverso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel9.add(jcb_servivocrearuniverso);
-        jcb_servivocrearuniverso.setBounds(180, 320, 460, 22);
 
         jLabel11.setText("Raza:");
-        jPanel9.add(jLabel11);
-        jLabel11.setBounds(80, 390, 50, 16);
-        jPanel9.add(tf_servivocrearraza);
-        tf_servivocrearraza.setBounds(170, 380, 470, 22);
-        jPanel9.add(tf_servivocrearcodigo);
-        tf_servivocrearcodigo.setBounds(170, 80, 470, 22);
-        jPanel9.add(tf_servivocrearnombre);
-        tf_servivocrearnombre.setBounds(170, 140, 470, 22);
 
-        js_serviviocrearpoder.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
-        jPanel9.add(js_serviviocrearpoder);
-        js_serviviocrearpoder.setBounds(170, 200, 460, 22);
+        js_servivocrearanios.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jButton13.setText("Agegar");
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -492,17 +483,112 @@ public class Main extends javax.swing.JFrame {
                 jButton13MouseClicked(evt);
             }
         });
-        jPanel9.add(jButton13);
-        jButton13.setBounds(740, 530, 72, 23);
 
-        js_servivocrearanios.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel9.add(js_servivocrearanios);
-        js_servivocrearanios.setBounds(170, 260, 450, 22);
+        js_serviviocrearpoder.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
 
-        jf_servivocrear.getContentPane().add(jPanel9);
-        jPanel9.setBounds(-32768, -32768, 100, 100);
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(tf_servivocrearraza, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(tf_servivocrearcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jButton13))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel8)
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(js_servivocrearanios, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_servivocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(jLabel9)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(js_serviviocrearpoder, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGap(170, 170, 170)
+                            .addComponent(jcb_servivocrearuniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(js_servivocrearanios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jcb_servivocrearuniverso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(267, 267, 267)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(js_serviviocrearpoder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(380, 380, 380)
+                        .addComponent(tf_servivocrearraza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(tf_servivocrearcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(tf_servivocrearnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(420, 420, 420)
+                        .addComponent(jButton13)))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
 
-        jcb_universoamodificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        javax.swing.GroupLayout jf_servivocrearLayout = new javax.swing.GroupLayout(jf_servivocrear.getContentPane());
+        jf_servivocrear.getContentPane().setLayout(jf_servivocrearLayout);
+        jf_servivocrearLayout.setHorizontalGroup(
+            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_servivocrearLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 795, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jf_servivocrearLayout.setVerticalGroup(
+            jf_servivocrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_servivocrearLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
@@ -520,6 +606,19 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel20)
                 .addContainerGap(555, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 770, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        jcb_universoamodificar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -877,6 +976,14 @@ public class Main extends javax.swing.JFrame {
         jf_ucreate.setVisible(true);
     }//GEN-LAST:event_jButton5MouseClicked
 
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        jf_servivocrear.setLocationRelativeTo(jf_agregar);
+        jf_servivocrear.pack();
+        jf_agregar.setVisible(false);
+        jf_servivocrear.setVisible(true);
+    }//GEN-LAST:event_jButton6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -959,6 +1066,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
